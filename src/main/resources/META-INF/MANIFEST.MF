@@ -1,1 +1,1 @@
-Main-Class: com.divrfxtest.divrfunction.DivrFunctionApplication
+Main-Class: com.fkgcp.DivrFunctionApplication

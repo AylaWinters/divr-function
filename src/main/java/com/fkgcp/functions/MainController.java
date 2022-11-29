@@ -23,4 +23,9 @@ public class MainController {
     return new ResponseEntity<>(message, HttpStatus.OK);
   }
 
+  @GetMapping("/")
+  public String hello() {
+    return "hello world!";
+  }
+  
 }
