@@ -29,7 +29,6 @@
 		    <artifactId>spring-cloud-starter-function-web</artifactId>
 		    <version>3.2.8</version>
 		</dependency>
-		
 		<dependency>
 		    <groupId>org.springframework.cloud</groupId>
 		    <artifactId>spring-cloud-function-dependencies</artifactId>
@@ -46,7 +45,6 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
@@ -81,10 +79,7 @@
 				<configuration>
 					<outputDirectory>target/deploy</outputDirectory>
 				</configuration>
-				<dependencies>
-					
-				</dependencies>
-				</plugin>
+			</plugin>
 			<plugin>
 				<groupId>com.google.cloud.functions</groupId>
 				<artifactId>function-maven-plugin</artifactId>
@@ -93,9 +88,7 @@
 					<functionTarget>org.springframework.cloud.function.adapter.gcp.GcfJarLauncher</functionTarget>
 					<port>8080</port>
 				</configuration>
-			</plugin>
-	      	
+			</plugin>	      	
 		</plugins>
 	</build>
-
 </project>
