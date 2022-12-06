@@ -60,30 +60,23 @@
 	<build>
 		<plugins>
 			<plugin>
-		      <!-- Build an executable JAR -->
-		      <groupId>org.apache.maven.plugins</groupId>
-		      <artifactId>maven-jar-plugin</artifactId>
-		      <configuration>
-		        <archive>
-		          <manifest>
-		            <addClasspath>true</addClasspath>
-		            <classpathPrefix>lib/</classpathPrefix>
-		            <mainClass>com.mypackage.MyClass</mainClass>
-		          </manifest>
-		        </archive>
-		      </configuration>
-	    	</plugin>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
+		      <groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
 					<outputDirectory>target/deploy</outputDirectory>
 				</configuration>
-			</plugin>
+				<dependencies>
+					<dependency>
+			            <groupId>org.springframework.cloud</groupId>
+			            <artifactId>spring-cloud-function-adapter-gcp</artifactId>
+			            <version>3.2.8</version>
+		        	</dependency>
+				</dependencies>
+	    	</plugin>
 			<plugin>
 				<groupId>com.google.cloud.functions</groupId>
 				<artifactId>function-maven-plugin</artifactId>
-				<version>0.9.1</version>
+				<version>0.10.1</version>
 				<configuration>
 					<functionTarget>org.springframework.cloud.function.adapter.gcp.GcfJarLauncher</functionTarget>
 					<port>8080</port>
